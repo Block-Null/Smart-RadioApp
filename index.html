@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>📻 Smart Radio App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio App</title> 
+<link rel="stylesheet" href="styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 
 <body>
-    <div class="radio">
-        <div class="radio-card text-center">
-            <select id="countrySelect" class="form-select m-3"></select>
-            <select id="stationSelect" class="form-select m-3"></select>
 
-            <div class="mt-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" id="stationLogo"
-                    class="logo">
-            </div>
-            <audio controls src="" id="equalizer"></audio>
-            <div class="fw-bold mt-2" id="stationName">Select Station</div>
-            <div class="small-info" id="stationInfo"></div>
+<div class="radio-container">
 
-        </div>
-        <script src="script.js"></script>
+<div class="radio-card text-center">
+
+    <h5>📻 Smart Radio</h5>
+
+    <!-- Country -->
+    <select id="countrySelect" class="form-select mt-3"></select>
+
+    <!-- Station -->
+    <select id="stationSelect" class="form-select mt-2"></select>
+
+    <!-- Station Info -->
+    <div class="mt-3">
+        <img id="stationLogo"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5w0vtT-Np6EZe7PV2tKzLIy8Q4HyELPTvR1pT2sva&s"
+             class="logo">
+
+        <div id="stationName" class="fw-bold mt-2">Select station</div>
+        <div id="stationInfo" class="small-info"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="mt-3 d-flex justify-content-center gap-2">
+        <button class="btn-play" onclick="playRadio()">Play</button>
+        <button class="btn-stop" onclick="stopRadio()">Stop</button>
+    </div>
+
+    <!-- Equalizer -->
+    <div class="equalizer" id="equalizer"></div>
+</div>
+
+</div>
+
+<audio id="audio" crossorigin="anonymous"></audio>
+
+
+<script src="script.js"></script>
 </body>
-
 </html>
